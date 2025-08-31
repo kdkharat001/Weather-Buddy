@@ -1,0 +1,52 @@
+<mat-card class="card chatbot-panel">
+  <h3 class="chatbot-title">Chatbot Assistant</h3>
+
+  <div *ngIf="step() === 1" class="chatbot-step">
+    <p class="chatbot-question">Do you prefer °C or °F?</p>
+    <div class="row chatbot-options">
+      <button
+        mat-stroked-button
+        class="chatbot-button"
+        (click)="chooseUnit('metric')"
+      >
+        °C
+      </button>
+      <button
+        mat-stroked-button
+        class="chatbot-button"
+        (click)="chooseUnit('imperial')"
+      >
+        °F
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="step() === 2" class="chatbot-step">
+    <p class="chatbot-question">Which city should I check?</p>
+    <input
+      class="chatbot-input"
+      placeholder="e.g., Paris"
+      [ngModel]="tempCity()"
+      (ngModelChange)="tempCity.set($event)"
+    />
+    <div class="row chatbot-actions" style="margin-top: 8px">
+      <button
+        mat-raised-button
+        color="primary"
+        class="chatbot-button"
+        (click)="setCity()"
+      >
+        Show Weather
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="step() === 3" class="chatbot-step">
+    <p class="chatbot-message">
+      Done — results should be visible. You can restart anytime.
+    </p>
+    <button mat-button class="chatbot-button" (click)="restart()">
+      Start over
+    </button>
+  </div>
+</mat-card>

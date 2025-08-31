@@ -1,0 +1,32 @@
+<div class="weather-search-container">
+  <h1>Find Your City’s Weather</h1>
+
+  <div class="search-controls">
+    <div class="search-bar-wrapper">
+      <input
+        class="search-input"
+        [ngModel]="modelCity()"
+        (ngModelChange)="modelCity.set($event)"
+        [value]="selectedCity"
+        placeholder="Enter city, e.g., Paris"
+        (keydown.enter)="onSubmit()"
+      />
+
+      <mat-slide-toggle
+        [checked]="isFahrenheit()"
+        (change)="toggleUnit($event.checked)"
+        class="unit-toggle"
+      >
+        {{ isFahrenheit() ? "°F" : "°C" }}
+      </mat-slide-toggle>
+    </div>
+
+    <button
+      mat-flat-button
+      class="search-button"
+      (click)="onSubmit()"
+    >
+      Search
+    </button>
+  </div>
+</div>

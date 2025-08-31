@@ -1,0 +1,81 @@
+.page {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  gap: 24px;
+  background: transparent;
+  margin-bottom: 50px;
+}
+
+mat-progress-bar {
+  margin-bottom: 12px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  gap: 24px;
+}
+
+.left-col {
+  display: grid;
+  gap: 20px;
+  align-content: start;
+}
+
+.right-col {
+  height: auto;
+  min-height: 520px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  overflow: hidden;
+}
+
+.left-col app-current-weather-card,
+.left-col app-forecast-chart {
+  width: 100%;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.left-col app-current-weather-card:hover,
+.left-col app-forecast-chart:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 992px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .right-col {
+    width: 100%;
+    min-height: 400px;
+  }
+}
+
+.left-col app-current-weather-card h2,
+.left-col app-forecast-chart h2 {
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #0078d7;
+  color: white;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

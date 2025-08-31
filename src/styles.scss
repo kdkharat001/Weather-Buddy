@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+mat-toolbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+main {
+  padding: 20px;
+}
+
+.padding-sm {
+  padding: 8px;
+}
+.padding-md {
+  padding: 16px;
+}
+.padding-lg {
+  padding: 24px;
+}
+
+.margin-sm {
+  margin: 8px;
+}
+.margin-md {
+  margin: 16px;
+}
+.margin-lg {
+  margin: 24px;
+}
+
+.weather-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .weather-card {
+    margin-bottom: 12px;
+  }
+}

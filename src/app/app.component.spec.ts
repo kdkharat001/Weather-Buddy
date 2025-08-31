@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [AppComponent], 
     }).compileComponents();
   });
 
@@ -14,16 +14,17 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'weather-buddy' title`, () => {
+  it(`should have the 'title' property as 'Weather-Buddy'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('weather-buddy');
+    expect(app.title).toEqual('Weather-Buddy');
   });
 
-  it('should render title', () => {
+  it('should render title in toolbar', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, weather-buddy');
+    const toolbarText = compiled.querySelector('mat-toolbar')?.textContent;
+    expect(toolbarText).toContain('weather-buddy');
   });
 });

@@ -1,0 +1,37 @@
+<div class="page">
+  <app-search-form
+    [unit]="state().unit"
+    [city]="state().city"
+    (submitSearch)="onCitySubmit($event)"
+  >
+  </app-search-form>
+
+  <mat-progress-bar
+    *ngIf="state().loading"
+    mode="indeterminate"
+  ></mat-progress-bar>
+
+  <div class="layout">
+    <div class="left-col">
+      <app-current-weather-card
+        [current]="state().current"
+        [unit]="state().unit"
+      ></app-current-weather-card>
+      <app-forecast-chart
+        [days]="state().forecast3d"
+        [unit]="state().unit"
+      ></app-forecast-chart>
+    </div>
+
+    <div class="right-col">
+      <app-map-panel
+        [coords]="state().coords"
+        [temp]="state().current?.temp"
+        [place]="state().current?.name"
+        [unit]="state().unit"
+        (mapClick)="onMapClick($event)"
+      >
+      </app-map-panel>
+    </div>
+  </div>
+</div>
